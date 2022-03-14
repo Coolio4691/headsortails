@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.2)
+
+set(CMAKE_MESSAGE_LOG_LEVEL "WARNING")
+set(CMAKE_INSTALL_MESSAGE NEVER)
+
+set(CMAKE_CXX_FLAGS "-O3")
+
+project(HeadsOrTails)
+
+file(GLOB_RECURSE SOURCE_FILES 
+	${CMAKE_SOURCE_DIR}/src/*.c
+	${CMAKE_SOURCE_DIR}/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/src/**/*.c
+	${CMAKE_SOURCE_DIR}/src/**/*.cpp
+    )
+
+file(GLOB_RECURSE HEADER_FILES 
+    ${CMAKE_SOURCE_DIR}/src/*.h
+    ${CMAKE_SOURCE_DIR}/src/**/*.h)
+
+include_directories(${CMAKE_BINARY_DIR})
+
+IF (WIN32)
+set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_SOURCE_DIR}/icon.rc")
+add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES} ${APP_ICON_RESOURCE_WINDOWS})
+ELSE()
+add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+ENDIF()
