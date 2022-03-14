@@ -1,13 +1,13 @@
 # Heads & Tails Coin Flipper
-This is a simple heads & tails c++ program designed to be as fast as I could make it.
+This is a simple heads & tails c++ program designed to be as fast as I could make it.<br>
 **Set DISPLAYTIME in src/ht.cpp to true to see execution time.**
 
 ## Not made for MacOS
 ## Building
 
-If you use bash just run ./build.sh in the root of the project. 
-If you use windows run CMake GUI and compile it. 
-If you use any other shell run 
+If you use bash just run ./build.sh in the root of the project.<br>
+If you use windows run CMake GUI and compile it.<br>
+If you use any other shell run
 ```
 mkdir build
 cd build
